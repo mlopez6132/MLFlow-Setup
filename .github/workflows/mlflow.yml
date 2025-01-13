@@ -25,6 +25,6 @@ jobs:
 
       - name: Run MLflow Experiment
         env:
-          MLFLOW_TRACKING_URI: "http://127.0.0.1:5000"
+          MLFLOW_TRACKING_URI: "http://180.190.37.37:5000"
         run: |
           python train_model.py
