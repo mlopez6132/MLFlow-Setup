@@ -23,14 +23,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Create SSH Tunnel
-        run: |
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh -o StrictHostKeyChecking=no -L 5000:localhost:5000 user@180.190.37.37-N &
-      
       - name: Run MLflow Experiment
         env:
-          MLFLOW_TRACKING_URI: "http://localhost:5000"
+          MLFLOW_TRACKING_URI: "http://180.190.37.37:5000"
         run: |
           python train_model.py
