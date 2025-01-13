@@ -15,7 +15,7 @@ from sklearn.metrics import (
 )
 
 # Set the tracking URI to the remote MLflow server
-mlflow.set_tracking_uri("http://<your-mlflow-server>:5000")
+mlflow.set_tracking_uri("http://localhost:5000")
 mlflow.set_experiment("xgboost_experiment")
 
 data = load_iris()
